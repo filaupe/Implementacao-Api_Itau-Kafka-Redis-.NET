@@ -1,0 +1,6 @@
+@ItauFunctions.Api.Implementation_HostAddress = http://localhost:5051
+
+GET {{ItauFunctions.Api.Implementation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
