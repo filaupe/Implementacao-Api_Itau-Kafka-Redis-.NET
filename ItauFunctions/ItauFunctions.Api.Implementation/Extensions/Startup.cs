@@ -1,7 +1,9 @@
 ﻿using ItauFunctions.Api.Implementation.Domain.Models.Enums;
 using ItauFunctions.Api.Implementation.Infrastructure.Repositories;
 using ItauFunctions.Api.Implementation.Infrastructure.Services;
+using ItauFunctions.Api.Implementation.Services;
 using ItauFunctions.Kafka.Implementation.Extensions;
+using ItauFunctions.Kafka.Implementation.Repositories.Interfaces;
 
 namespace ItauFunctions.Api.Implementation.Extensions
 {
@@ -14,13 +16,14 @@ namespace ItauFunctions.Api.Implementation.Extensions
             services.AddSwaggerGen();
             services.ConfigureItauClient(configuration);
             services.ConfigureInjectionServices();
-            services.AddKafka();
+            services.AddKafka(configuration);
         }
 
         public static void ConfigureInjectionServices(this IServiceCollection services)
         {
             services.AddSingleton<ItauClientRepository>();
             services.AddSingleton<ItauCobrancasImediataPixRepository>();
+            services.AddSingleton<IKafkaRepository, KafkaRepository>();
 
             services.AddSingleton<ItauTokenService>();
             services.AddSingleton<ItauCobrancasImediataPixService>();
