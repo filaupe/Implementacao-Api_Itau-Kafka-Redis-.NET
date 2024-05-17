@@ -54,10 +54,10 @@ namespace ItauFunctions.Api.Implementation.Services
                     try
                     {
                         var consumeResult = consumer.Consume(stoppingToken);
-                        var response = _itauCobrancasImediataPixService.Post(new Post_Request_Cobrancas_Imediata_Pix());
-                        var img = _itauCobrancasImediataPixService.Get(response.IdCobrancaImediataPix);
-                        await _cacheService.SetCacheValueAsync("Formato", img);
-                        //Console.WriteLine($"Teste: {consumeResult.Mess age.Value}");
+                        //var response = _itauCobrancasImediataPixService.Post(new Post_Request_Cobrancas_Imediata_Pix());
+                        //var img = _itauCobrancasImediataPixService.Get(response.IdCobrancaImediataPix);
+                        //await _cacheService.SetCacheValueAsync("Formato", img);
+                        Console.WriteLine($"Teste: {consumeResult.Message.Value}");
                     }
                     catch (OperationCanceledException) when (stoppingToken.IsCancellationRequested)
                     {

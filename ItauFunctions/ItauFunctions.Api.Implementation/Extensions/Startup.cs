@@ -67,7 +67,6 @@ namespace ItauFunctions.Api.Implementation.Extensions
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
             app.UseAuthorization();
             app.MapControllers();
         }
