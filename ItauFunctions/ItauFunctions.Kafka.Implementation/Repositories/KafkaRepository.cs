@@ -1,11 +1,6 @@
 ﻿using Confluent.Kafka;
 using ItauFunctions.Kafka.Implementation.Repositories.Interfaces;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ItauFunctions.Kafka.Implementation.Repositories
 {

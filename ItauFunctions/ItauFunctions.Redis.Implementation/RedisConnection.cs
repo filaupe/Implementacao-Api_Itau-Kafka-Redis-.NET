@@ -1,4 +1,5 @@
-﻿using StackExchange.Redis;
+﻿using Microsoft.Extensions.Configuration;
+using StackExchange.Redis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,9 @@ namespace ItauFunctions.Redis.Implementation
             lazyConnection = new Lazy<ConnectionMultiplexer>(() => {
                 var configurationOptions = new ConfigurationOptions
                 {
-                    EndPoints = { "localhost:6379" }
+                    EndPoints = { "localhost:6379" },
+                    AbortOnConnectFail = false,
+                    ConnectTimeout = 30000
                 };
                 return ConnectionMultiplexer.Connect(configurationOptions);
             });

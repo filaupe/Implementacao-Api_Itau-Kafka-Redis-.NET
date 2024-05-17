@@ -11,9 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItauFunctions.Api.Implement
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItauFunctions.Kafka.Implementation", "ItauFunctions.Kafka.Implementation\ItauFunctions.Kafka.Implementation.csproj", "{0E73F50F-86BB-41E3-88D2-F4521F3FFE62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItauFunctions.Redis.Implementation", "ItauFunctions.Redis.Implementation\ItauFunctions.Redis.Implementation.csproj", "{37667726-04C9-40A3-83A9-F36AE2835F3D}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItauFunctions.Kafka.Implementation", "ItauFunctions.Kafka.Implementation\ItauFunctions.Kafka.Implementation.csproj", "{494B61F0-C7E6-49AF-88E2-1A23D9CC4A4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItauFunctions.Redis.Implementation", "ItauFunctions.Redis.Implementation\ItauFunctions.Redis.Implementation.csproj", "{37667726-04C9-40A3-83A9-F36AE2835F3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
