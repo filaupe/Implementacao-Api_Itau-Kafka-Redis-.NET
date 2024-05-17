@@ -1,13 +1,8 @@
-﻿using ItauFunctions.Api.Implementation.Domain.Models;
-using ItauFunctions.Api.Implementation.Domain.Models.Cobrancas_Imediata_Pix;
+﻿using ItauFunctions.Api.Implementation.Domain.Models.Cobrancas_Imediata_Pix;
 using ItauFunctions.Api.Implementation.Domain.Models.Cobrancas_Imediata_Pix.Id_Cobranca_Imediata_Pix.QrCode;
 using ItauFunctions.Api.Implementation.Infrastructure.Services;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ItauFunctions.Api.Implementation.Infrastructure.Repositories
 {

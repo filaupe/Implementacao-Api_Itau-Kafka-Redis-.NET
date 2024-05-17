@@ -13,14 +13,10 @@ namespace ItauFunctions.Api.Implementation.Infrastructure.Services
 {
     public class ItauCobrancasImediataPixService
     {
-        private readonly IConfiguration _configuration;
-        private readonly ItauTokenService _itauTokenService;
         private readonly ItauCobrancasImediataPixRepository _itauCobrancasImediataPixRepository;
         
-        public ItauCobrancasImediataPixService(IConfiguration configuration, ItauTokenService itauTokenService, ItauCobrancasImediataPixRepository itauCobrancasImediataPixRepository)
+        public ItauCobrancasImediataPixService(ItauCobrancasImediataPixRepository itauCobrancasImediataPixRepository)
         {
-            _configuration = configuration;
-            _itauTokenService = itauTokenService;
             _itauCobrancasImediataPixRepository = itauCobrancasImediataPixRepository;
         }
 
