@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItauFunctions.Api.Implement
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItauFunctions.Api.Implementation.Infrastructure", "ItauFunctions.Api.Implementation.Infrastructure\ItauFunctions.Api.Implementation.Infrastructure.csproj", "{15F93743-2A73-43DC-95B4-926B9978DCFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItauFunctions.Kafka.Implementation", "ItauFunctions.Kafka.Implementation\ItauFunctions.Kafka.Implementation.csproj", "{0E73F50F-86BB-41E3-88D2-F4521F3FFE62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItauFunctions.Kafka.Implementation", "ItauFunctions.Kafka.Implementation\ItauFunctions.Kafka.Implementation.csproj", "{0E73F50F-86BB-41E3-88D2-F4521F3FFE62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItauFunctions.Redis.Implementation", "ItauFunctions.Redis.Implementation\ItauFunctions.Redis.Implementation.csproj", "{37667726-04C9-40A3-83A9-F36AE2835F3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0E73F50F-86BB-41E3-88D2-F4521F3FFE62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E73F50F-86BB-41E3-88D2-F4521F3FFE62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E73F50F-86BB-41E3-88D2-F4521F3FFE62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37667726-04C9-40A3-83A9-F36AE2835F3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37667726-04C9-40A3-83A9-F36AE2835F3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37667726-04C9-40A3-83A9-F36AE2835F3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37667726-04C9-40A3-83A9-F36AE2835F3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

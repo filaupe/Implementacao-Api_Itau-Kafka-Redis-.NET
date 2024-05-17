@@ -3,13 +3,13 @@ using ItauFunctions.Kafka.Implementation.Repositories.Interfaces;
 
 namespace ItauFunctions.Api.Implementation.Services
 {
-    public class KafkaRepository : IKafkaRepository
+    public class KafkaService : IKafkaRepository
     {
         private readonly string _bootstrapServers;
         private readonly string _groupId;
         private readonly string _topic;
 
-        public KafkaRepository(IConfiguration configuration)
+        public KafkaService(IConfiguration configuration)
         {
             string? groupId = configuration["Kafka:GroupId"];
 

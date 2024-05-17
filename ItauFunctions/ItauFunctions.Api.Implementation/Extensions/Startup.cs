@@ -3,6 +3,7 @@ using ItauFunctions.Api.Implementation.Infrastructure.Repositories;
 using ItauFunctions.Api.Implementation.Infrastructure.Services;
 using ItauFunctions.Api.Implementation.Services;
 using ItauFunctions.Kafka.Implementation.Extensions;
+using ItauFunctions.Redis.Implementation.Extensions;
 using ItauFunctions.Kafka.Implementation.Repositories.Interfaces;
 
 namespace ItauFunctions.Api.Implementation.Extensions
@@ -17,12 +18,13 @@ namespace ItauFunctions.Api.Implementation.Extensions
             services.ConfigureItauClient(configuration);
             services.ConfigureInjectionServices();
             services.AddKafka(configuration);
+            services.AddRedis();
         }
 
         public static void ConfigureInjectionServices(this IServiceCollection services)
         {
             services.AddSingleton<ItauClientRepository>();
-            services.AddSingleton<IKafkaRepository, KafkaRepository>();
+            services.AddSingleton<IKafkaRepository, KafkaService>();
 
             services.AddSingleton<ItauTokenService>();
         }
