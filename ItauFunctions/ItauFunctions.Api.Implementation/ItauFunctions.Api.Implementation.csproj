@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ItauFunctions.Api.Implementation.Domain\ItauFunctions.Api.Implementation.Domain.csproj" />
     <ProjectReference Include="..\ItauFunctions.Api.Implementation.Infrastructure\ItauFunctions.Api.Implementation.Infrastructure.csproj" />
+    <ProjectReference Include="..\ItauFunctions.Kafka.Implementation\ItauFunctions.Kafka.Implementation.csproj" />
   </ItemGroup>
 
 </Project>

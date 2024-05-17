@@ -20,24 +20,36 @@ namespace ItauFunctions.Api.Implementation.Infrastructure.Services
             _itauClientRepository = itauClientRepository;
         }
 
-        public async Task<Token> AuthorizationToken(string? clientId, string? clientSecret)
+        public async Task<Token> AuthorizationTokenAsync(string? clientId = null, string? clientSecret = null)
         {
             try
             {
                 clientId ??= _configuration["Authentication:ClientId"];
                 clientSecret ??= _configuration["Authentication:ClientSecret"];
 
-                if (clientId == null || clientSecret == null)
+                if (String.IsNullOrWhiteSpace(clientId) || String.IsNullOrWhiteSpace(clientSecret))
                 {
                     throw new Exception("Campos obrigatórios não preenchidos.");
                 }
 
-                return await _itauClientRepository.AuthorizationToken(clientId, clientSecret);
+                return await _itauClientRepository.AuthorizationTokenAsync(clientId, clientSecret);
             }
             catch
             {
                 throw;
             }
+        }
+
+        public async Task<string> AuthorizationTokenStringAsync()
+        {
+            var token = await AuthorizationTokenAsync();
+            return token.AccessToken;
+        }
+
+        public async Task<string> AuthorizationTokenStringAsync(string? clientId, string? clientSecret)
+        {
+            var token = await AuthorizationTokenAsync(clientId, clientSecret);
+            return token.AccessToken;
         }
     }
 }

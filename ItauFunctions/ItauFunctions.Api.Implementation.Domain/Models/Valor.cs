@@ -7,15 +7,21 @@ using System.Threading.Tasks;
 
 namespace ItauFunctions.Api.Implementation.Domain.Models
 {
-    public class Valor
+    public class ValorCompleto
     {
         [JsonProperty("original")]
         public string Original { get; set; }
 
         [JsonProperty("modalidadeAlteracao")]
-        public string ModalidadeAlteracao { get; set; }
+        public string? ModalidadeAlteracao { get; set; }
 
         [JsonProperty("retirada")]
-        public Retirada Retirada { get; set; }
+        public Retirada? Retirada { get; set; }
+    }
+    
+    public class ValorPost
+    {
+        [JsonProperty("original")]
+        public string Original { get; set; }
     }
 }

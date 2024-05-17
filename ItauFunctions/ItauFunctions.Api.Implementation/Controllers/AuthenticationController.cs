@@ -1,6 +1,5 @@
 ﻿using ItauFunctions.Api.Implementation.Domain.Models;
 using ItauFunctions.Api.Implementation.Infrastructure.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ItauFunctions.Api.Implementation.Controllers
@@ -22,7 +21,7 @@ namespace ItauFunctions.Api.Implementation.Controllers
         {
             try
             {
-                var result = await _itauTokenService.AuthorizationToken(client_id, client_secret);
+                var result = await _itauTokenService.AuthorizationTokenAsync(client_id, client_secret);
                 return Ok(result);
             }
             catch (Exception ex)
