@@ -24,9 +24,11 @@ namespace ItauFunctions.Api.Implementation.Extensions
         public static void ConfigureInjectionServices(this IServiceCollection services)
         {
             services.AddSingleton<ItauClientRepository>();
+            services.AddSingleton<ItauCobrancasImediataPixRepository>();
             services.AddSingleton<IKafkaRepository, KafkaService>();
 
             services.AddSingleton<ItauTokenService>();
+            services.AddSingleton<ItauCobrancasImediataPixService>();
         }
 
         public static void ConfigureItauClient(this IServiceCollection services, IConfiguration configuration)

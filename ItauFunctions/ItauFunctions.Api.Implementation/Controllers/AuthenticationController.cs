@@ -27,8 +27,7 @@ namespace ItauFunctions.Api.Implementation.Controllers
         {
             try
             {
-                await _cacheService.SetCacheValueAsync<Get_Response_Cobrancas_Imediata_Pix>("Teste123Teste", new Get_Response_Cobrancas_Imediata_Pix());
-                var result = await _itauTokenService.AuthorizationToken(client_id, client_secret);
+                var result = await _itauTokenService.AuthorizationTokenAsync(client_id, client_secret);
                 return Ok(result);
             }
             catch (Exception ex)

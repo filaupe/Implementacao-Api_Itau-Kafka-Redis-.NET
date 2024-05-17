@@ -10,13 +10,13 @@ namespace ItauFunctions.Api.Implementation.Domain.Models.Cobrancas_Imediata_Pix.
     public class Patch_Request_Cobrancas_Imediata_Pix
     {
         [JsonProperty("valor")]
-        public Valor Valor { get; set; }
+        public ValorCompleto Valor { get; set; }
 
         [JsonProperty("chave")]
         public string Chave { get; set; }
 
         [JsonProperty("calendario")]
-        public Calendario Calendario { get; set; }
+        public CalendarioCompleto Calendario { get; set; }
 
         [JsonProperty("txid")]
         public string Txid { get; set; }

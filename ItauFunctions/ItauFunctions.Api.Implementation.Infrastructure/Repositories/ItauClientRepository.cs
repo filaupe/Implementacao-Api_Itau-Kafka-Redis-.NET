@@ -13,12 +13,25 @@ namespace ItauFunctions.Api.Implementation.Infrastructure.Repositories
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task<Token> AuthorizationToken(string clientId, string clientSecret)
+        private HttpClient InstanceClient(string instance)
+        {
+            var client = _httpClientFactory.CreateClient(instance);
+            client.DefaultRequestHeaders.Add("User-Agent", "Other");
+            return client;
+        }
+        
+        private HttpClient InstanceClient(string instance, string token)
+        {
+            var client = InstanceClient(instance);
+            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
+            return client;
+        }
+
+        public async Task<Token> AuthorizationTokenAsync(string clientId, string clientSecret)
         {
             try
             {
-                var client = _httpClientFactory.CreateClient(nameof(EClient.ItauToken));
-                client.DefaultRequestHeaders.Add("User-Agent", "Other");
+                var client = InstanceClient(nameof(EClient.ItauToken));
 
                 var parameters = new Dictionary<string, string>
                 {
@@ -32,6 +45,37 @@ namespace ItauFunctions.Api.Implementation.Infrastructure.Repositories
 
                 string json = await response.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<Token>(json)!;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        
+        public async Task<string> GetStringAsync(string url, string token)
+        {
+            try
+            {
+                var client = InstanceClient(nameof(EClient.ItauApi), token);
+                url = $"{client.BaseAddress}/{url}";
+                string response = await client.GetStringAsync(url);
+                return response;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        
+        public async Task<string> PostAsync(string url, HttpContent requestBody, string token)
+        {
+            try
+            {
+                var client = InstanceClient(nameof(EClient.ItauApi), token);
+                url = $"{client.BaseAddress}/{url}";
+                var response = await client.PostAsync(url, requestBody);
+                string content = await response.Content.ReadAsStringAsync();
+                return content;
             }
             catch
             {

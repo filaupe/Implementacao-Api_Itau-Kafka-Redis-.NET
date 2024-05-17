@@ -10,10 +10,10 @@ namespace ItauFunctions.Api.Implementation.Domain.Models.Cobrancas_Imediata_Pix
     public class Post_Request_Cobrancas_Imediata_Pix
     {
         [JsonProperty("calendario")]
-        public Calendario Calendario { get; set; }
+        public CalendarioPost Calendario { get; set; }
 
         [JsonProperty("valor")]
-        public Valor Valor { get; set; }
+        public ValorPost Valor { get; set; }
 
         [JsonProperty("chave")]
         public string Chave { get; set; }

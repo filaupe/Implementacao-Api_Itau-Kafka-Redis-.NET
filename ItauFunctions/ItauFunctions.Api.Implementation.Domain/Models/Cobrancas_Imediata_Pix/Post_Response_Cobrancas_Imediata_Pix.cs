@@ -30,10 +30,10 @@ namespace ItauFunctions.Api.Implementation.Domain.Models.Cobrancas_Imediata_Pix
         public Loc Loc { get; set; }
 
         [JsonProperty("calendario")]
-        public Calendario Calendario { get; set; }
+        public CalendarioCompleto Calendario { get; set; }
 
         [JsonProperty("valor")]
-        public Valor Valor { get; set; }
+        public ValorCompleto Valor { get; set; }
 
         [JsonProperty("chave")]
         public string Chave { get; set; }
